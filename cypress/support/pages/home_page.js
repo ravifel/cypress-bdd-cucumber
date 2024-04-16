@@ -7,7 +7,8 @@ const elements = {
         top_header: '#top_header'
     },
     icons: {
-        login: '.fa-user'
+        login: '.fa-user',
+        user_register: '.fa-lock'
     }
 }
 
@@ -19,6 +20,16 @@ export default {
             .should('be.visible')
 
         cy.get(elements.icons.login)
+            .should('be.visible')
+            .click()
+    },
+
+    access_user_register() {
+        cy.visit('/')
+            .get(elements.menu.top_header)
+            .should('be.visible')
+
+        cy.get(elements.icons.user_register)
             .should('be.visible')
             .click()
     }
