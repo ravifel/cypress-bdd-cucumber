@@ -17,20 +17,20 @@ Because i want make a order
 
   Scenario: Email field invalid
     And I fill name
-    And I fill email "invalid_email"
+    And I fill email invalid
     When I click on Register
     Then I see the message "O campo e-mail deve ser prenchido corretamente" on register
 
   Scenario: Password field empty
     And I fill name
-    And I fill email "teste@email.com"
+    And I fill email valid
     When I click on Register
     Then I see the message "O campo senha deve ter pelo menos 6 dígitos" on register
 
   Scenario: Password field invalid
     And I fill name
-    And I fill email "teste@email.com"
-    And I fill email "123"
+    And I fill email valid
+    And I fill password invalid
     When I click on Register
     Then I see the message "O campo senha deve ter pelo menos 6 dígitos" on register
 
